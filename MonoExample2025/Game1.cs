@@ -10,6 +10,14 @@ namespace MonoExample2025
 {
     public class Game1 : Game
     {
+        public enum Colors
+        {
+            Red,
+            Green,
+            Blue,
+        }
+        Color[] colors = { Color.Red, Color.Green, Color.Blue };
+        
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Song openingMusicTrack;
@@ -77,6 +85,20 @@ namespace MonoExample2025
             // Toggle first element tint Needed for Week2 lab 1
             if (InputEngine.IsKeyPressed(Keys.T))
                 spritesCollection[0].Tint = !spritesCollection[0].Tint;
+            //if(InputEngine.IsMouseLeftClick())
+            //{
+            //    foreach(var item in spritesCollection)
+            //    {
+            //        if(item.BoundingRect.Contains(InputEngine.MousePosition.ToPoint()))
+            //        {
+            //            item.Tint = !item.Tint;
+            //        }
+            //    }
+            //}
+            foreach(var item in spritesCollection)
+            {
+                item.Update();
+            }
 
             //if(InputEngine.IsKeyHeld(Keys.Right)) 
             //{
@@ -87,14 +109,14 @@ namespace MonoExample2025
             //    bodySprite.Move(new Vector2(-5, 0));
             //}
 
-                //if(InputEngine.IsMouseLeftClick() 
-                //    && bodySprite.BoundingRect.Contains(InputEngine.MousePosition.ToPoint() ))
-                //    if(clickPlayer.State != SoundState.Playing)
-                //    {
-                //        clickPlayer.Play();
-                //    }
+            //if(InputEngine.IsMouseLeftClick() 
+            //    && bodySprite.BoundingRect.Contains(InputEngine.MousePosition.ToPoint() ))
+            //    if(clickPlayer.State != SoundState.Playing)
+            //    {
+            //        clickPlayer.Play();
+            //    }
 
-                // TODO: Add your update logic here
+            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }

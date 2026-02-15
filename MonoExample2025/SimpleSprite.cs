@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Engine.Engines;
 
 namespace Sprites
 {
@@ -33,7 +34,15 @@ namespace Sprites
             else sp.Draw(Image, Position, AlphaColor);
 
         }
-
+        public void Update()
+        {
+            if (InputEngine.IsMouseLeftClick()
+                && BoundingRect.Contains(InputEngine.MousePosition.ToPoint()))
+            {
+                Tint = !Tint;
+            }
+                
+        }
         public void Move(Vector2 delta)
         {
             Position += delta;

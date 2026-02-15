@@ -87,7 +87,7 @@ namespace Sprites
             if(camera != null)
             {
                 position = Vector2.Clamp(position,
-                Vector2.Zero + new Vector2(SpriteHeight, SpriteWidth),
+                Vector2.Zero ,
                 Camera.WorldBound - new Vector2(SpriteWidth, SpriteHeight));
                 Camera.follow(position, Game.GraphicsDevice.Viewport);
 

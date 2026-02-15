@@ -22,8 +22,8 @@
         {
             int i = 25;
             float f = 34.067f;
-            print<int>(i);
-            print<float>(f);
+            //print<int>(i);
+            //print<float>(f);
 
             Player p = new Player()
             {
@@ -32,9 +32,9 @@
                 XP = 200
             };
             //print<Player>(p);
-            LL_ex();
+            //LL_ex();
             //ST_ex();
-            //Queue_ex();
+            Queue_ex();
             //Dict_ex();
 
             Console.ReadLine();
@@ -83,6 +83,7 @@
             Queue<int> fifo = new Queue<int>();
             fifo.Enqueue(1);
             fifo.Enqueue(2);
+            int temp = fifo.Peek();
             int i = fifo.Dequeue();
             Console.WriteLine("Item dequeued is {0} stack count is {1}. current top item is {2} ", i.ToString(), fifo.Count(), fifo.Peek());
             Console.ReadKey();
